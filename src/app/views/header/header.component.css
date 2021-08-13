@@ -1,0 +1,19 @@
+.mbg-primary {
+    background-color: #41BC59;
+}
+
+.navbar-light .navbar-brand {
+    color: #FFF;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: #FFF;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255,255,255,.55);
+}
+
+.navbar-brand img {
+    width: 100px;
+}
