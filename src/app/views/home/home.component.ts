@@ -6,11 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  doctors = [
+    {
+      name: 'José Alex'
+    },
+    {
+      name: 'Bruno Wagner'
+    },
+    {
+      name: 'Frabricio Cruz'
+    }
+  ]
   constructor() { }
 
   ngOnInit(): void {
-
+    console.log(this.doctors)
   }
 
 }

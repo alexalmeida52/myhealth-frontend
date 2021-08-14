@@ -1,0 +1,52 @@
+.ratings i {
+    font-size: 16px;
+    color: red
+}
+
+.strike-text {
+    color: red;
+    text-decoration: line-through
+}
+
+.product-image {
+    width: 100%
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.spec-1 {
+    color: #938787;
+    font-size: 15px
+}
+
+h5 {
+    font-weight: 400
+}
+
+.para {
+    font-size: 16px
+}
+
+/**/
+
+.action-item-doctor button {
+    color: #fff;
+    background-color: #41BC59;
+    border-color: #41BC59;
+    margin-right: 8px;
+}
+
+.action-item-doctor button:hover {
+    color: #fff;
+    background-color: #42bd19d0;
+    border-color: #42bd19d0;
+}

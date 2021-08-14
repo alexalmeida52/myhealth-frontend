@@ -1,7 +1,58 @@
-<div class="container">
-    <div class="row">
-        <div class="alert alert-success" role="alert">
-            Home do myHealth
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <div class="row p-2 bg-white border rounded" *ngFor="let doctor of doctors">
+                
+                <div class="mt-1 position-relative d-flex col-md-9 col-sm-12">
+                    <div
+                    style="    display: flex!important;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%!important;
+                    overflow: hidden;
+                    height: fit-content;"
+                    class="col-md-2 mt-1 d-flex justify-content-center align-items-top rounded">
+                        <div class="d-flex">
+                            <img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg">
+                        </div>
+                    </div>
+                    <div class="col-10 p-2">
+                        <h5>Dr. José Alex Alves Pereira</h5>
+                        <div class="d-flex flex-row">
+                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>Cardiologia</span>
+                        </div>
+                        <div class="mt-1 mb-1 spec-1"><span>Policlínica, Alecrim, Natal-RN</span></div>
+                        
+                        <!-- <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p> -->                        
+                    </div>
+                </div>
+                <div class="align-items-center align-content-center col-md-3 col-sm-12 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">R$130.99</h4>
+                        <!-- <span class="strike-text">$200.99</span> -->
+                    </div>
+                    <div class="mt-1 mb-1 spec-1 action-item-doctor">
+                        <button type="button" class="btn btn-primary">Perfil</button>
+                        <button type="button" class="btn btn-primary">Agendar</button>
+                    </div>
+                    
+                </div>
+                    <!--
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">R$130.99</h4><span class="strike-text">$200.99</span>
+                    </div>
+                    <h6 class="text-success">À vista</h6>
+                    <div class="d-flex flex-column mt-4">
+                        <button class="btn btn-primary btn-sm" type="button">
+                            Details
+                        </button>
+                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                            Add to wishlist
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+           
         </div>
     </div>
 </div>
