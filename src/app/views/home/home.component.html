@@ -10,14 +10,16 @@
                     align-items: center;
                     border-radius: 50%!important;
                     overflow: hidden;
-                    height: fit-content;"
-                    class="col-md-2 mt-1 d-flex justify-content-center align-items-top rounded">
-                        <div class="d-flex">
-                            <img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg">
+                    height: 120px; width: 120px;
+                    min-width: 120px;
+                    min-height: 120px;"
+                    class="col-md-2 col-sm-4 mt-1 d-flex justify-content-center align-items-top rounded">
+                        <div class="d-flex" style="height: 100%; width: 100%;">
+                            <img style="max-width: 100%; max-height: 100%;" class="img-fluid img-responsive rounded product-image" [src]="doctor.avatar">
                         </div>
                     </div>
-                    <div class="col-10 p-2">
-                        <h5>Dr. José Alex Alves Pereira</h5>
+                    <div class="col-md-10 col-sm-8 p-2">
+                        <h5>Dr. {{doctor.name}}</h5>
                         <div class="d-flex flex-row">
                             <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>Cardiologia</span>
                         </div>
