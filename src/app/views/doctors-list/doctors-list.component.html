@@ -1,9 +1,16 @@
-<form>
+<form (ngSubmit)="getDoctorsByName()">
     <div class="mb-3">
       <!-- <label for="exampleInputEmail1" class="form-label">Pesquise por nome</label> -->
-      <input placeholder="Digite sua pesquisa..." type="text" class="form-control" style="text-transform: capitalize;" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input 
+        [(ngModel)]="name"
+        name="name" 
+        placeholder="Digite sua pesquisa..." 
+        type="text" 
+        class="form-control" 
+        style="text-transform: capitalize;"
+        >
       <div id="emailHelp" class="form-text">Os filtros se aplicados refinarão a busca.</div>
-      <button type="submit" class="btn btn-primary" style="margin: auto;">Pesquisar</button>
+      <button type="button" (click)="getDoctorsByName()" class="btn btn-primary" style="margin: auto;">Pesquisar</button>
     </div>
 </form>
 

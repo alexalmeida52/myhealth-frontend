@@ -21,4 +21,8 @@ export class DoctorService {
   public getCategorias(): Observable<ResponseGetDoctors[]> {
     return this.httpClient.get<ResponseGetDoctors[]>(this.baseUrl + '/doctors');
   }
+
+  public getDoctorByName(name: String) {
+    return this.httpClient.get<ResponseGetDoctors[]>(this.baseUrl + '/doctors/' + '?name=' + name);
+  }
 }

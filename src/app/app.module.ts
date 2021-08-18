@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './views/home/home.component';
 import { DoctorsListComponent } from './views/doctors-list/doctors-list.component';
 import { HeaderComponent } from './views/header/header.component';
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
