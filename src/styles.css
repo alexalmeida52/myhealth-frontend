@@ -10,3 +10,5 @@ body { margin: 0; font-family: "Roboto", "Helvetica Neue", sans-serif!important;
 .btn-primary:hover {
     background-color: #3dad53!important;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
