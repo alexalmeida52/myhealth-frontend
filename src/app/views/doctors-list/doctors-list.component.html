@@ -1,1 +1,88 @@
-<p>doctors-list works!</p>
+<form>
+    <div class="mb-3">
+      <!-- <label for="exampleInputEmail1" class="form-label">Pesquise por nome</label> -->
+      <input placeholder="Digite sua pesquisa..." type="text" class="form-control" style="text-transform: capitalize;" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">Os filtros se aplicados refinarão a busca.</div>
+      <button type="submit" class="btn btn-primary" style="margin: auto;">Pesquisar</button>
+    </div>
+</form>
+
+<div style="width: 100%; margin: auto;" class="row p-2 bg-white border rounded" *ngFor="let doctor of doctors">
+                
+    <div class="mt-1 position-relative d-flex dividir col-md-9 col-sm-12">
+
+        <div style="    display: flex!important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;">
+            <div
+            style="    display: flex!important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%!important;
+            overflow: hidden;
+            height: 120px; width: 120px;
+            min-width: 120px;
+            min-height: 120px;"
+            class="col-md-2 col-sm-4 mt-1 d-flex justify-content-center align-items-top rounded">
+                <div class="d-flex" style="height: 100%; width: 100%;">
+                    <img style="max-width: 100%; max-height: 100%;" class="img-fluid img-responsive rounded product-image" [src]="doctor.avatar">
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="ratings mr-2">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-10 col-sm-8 p-2">
+            <h5>
+                {{ doctor.gender == 'M' ? 'Dr. ' : 'Dra. ' }} {{ doctor.name }} {{ doctor.last_name }}
+            </h5>
+            <span>Cardiologia</span>
+            <div class="mt-1 mb-1 spec-1"><span>{{doctor.clinic}}, Alecrim, Natal-RN</span></div>
+            
+            <!-- <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p> -->                        
+        </div>
+    </div>
+    <div class="d-flex flex-column align-items-center align-content-center col-md-3 col-sm-12 border-left mt-1 d-md-block d-sm-flex">
+        <div class="align-items-center">
+            <h4 class="mr-1">{{ formatPrice(doctor.price) }}</h4>
+            <!-- <span class="strike-text">$200.99</span> -->
+        </div>
+        <div class="mt-1 mb-1 spec-1 action-item-doctor">
+            <button type="button" class="btn btn-primary">Perfil</button>
+            <button type="button" class="btn btn-primary">Agendar</button>
+        </div>
+        
+    </div>
+        <!--
+        <div class="d-flex flex-row align-items-center">
+            <h4 class="mr-1">R$130.99</h4><span class="strike-text">$200.99</span>
+        </div>
+        <h6 class="text-success">À vista</h6>
+        <div class="d-flex flex-column mt-4">
+            <button class="btn btn-primary btn-sm" type="button">
+                Details
+            </button>
+            <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                Add to wishlist
+            </button>
+        </div>
+    </div> -->
+</div>
+<nav style="display: flex; justify-content: center; margin-top: 18px;" aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a style="color: #41BC59;" class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a style="color: #41BC59;" class="page-link" href="#">1</a></li>
+      <li class="page-item"><a style="color: #41BC59;" class="page-link" href="#">2</a></li>
+      <li class="page-item"><a style="color: #41BC59;" class="page-link" href="#">3</a></li>
+      <li class="page-item"><a style="color: #41BC59;" class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>

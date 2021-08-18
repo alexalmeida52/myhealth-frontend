@@ -9,6 +9,7 @@ import { DoctorsListComponent } from './views/doctors-list/doctors-list.componen
 import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { SchedulingComponent } from './views/scheduling/scheduling.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,11 @@ import { SchedulingComponent } from './views/scheduling/scheduling.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}

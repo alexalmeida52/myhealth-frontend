@@ -7,13 +7,14 @@ import { ResponseGetDoctors } from '../models/responseGetDoctors.model';
   providedIn: 'root'
 })
 export class DoctorService {
-  baseUrl = 'http://localhost:8080'
+  baseUrl = 'http://localhost:3333'
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
+  
 
   constructor(private httpClient: HttpClient) { }
 
