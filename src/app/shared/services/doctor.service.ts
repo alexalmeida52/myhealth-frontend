@@ -22,7 +22,10 @@ export class DoctorService {
     return this.httpClient.get<ResponseGetDoctors[]>(this.baseUrl + '/doctors');
   }
 
-  public getDoctorByName(name: String) {
-    return this.httpClient.get<ResponseGetDoctors[]>(this.baseUrl + '/doctors/' + '?name=' + name);
+  public getDoctorByName(filters) {
+    console.log(filters);
+    return this.httpClient.get<ResponseGetDoctors[]>(this.baseUrl + '/doctors/' + 
+    '?name=' + filters.name +
+    '&stars=' + filters.stars);
   }
 }

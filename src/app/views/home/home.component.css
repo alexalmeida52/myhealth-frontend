@@ -1,52 +1,13 @@
 
   
-  html {
-    font-size: 100%;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
   
-  *,
-  *::before,
-  *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
-    list-style: none;
-    list-style-type: none;
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-  
-  a,
-  button {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    text-decoration: none;
-  }
-  
-  img,
-  video {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
   
   .container {
     max-width: 83rem;
     width: 100%;
     height: auto;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 0.7rem;
   }
   
   .brand-link {

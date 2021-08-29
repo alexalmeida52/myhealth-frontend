@@ -1,3 +1,58 @@
+<nav class="navbar">
+    <div class="container">
+        <section class="wrapper">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+            <h2 style="margin: 0;">
+                Pesquise por nome
+            </h2>
+            <button type="button" class="burger" id="burger2">
+                <fa-icon style="color: #FFF;" [icon]="faFilter" ></fa-icon>
+            </button>
+            </div>
+            <div class="menu row" id="menu2">
+                <div class="col-md-4 col-sm-12">
+                    <h3 style="margin: 0;">Especialidades:</h3>
+                    <ul class="menu-inner">
+                        <li >
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Alergologia
+                        </li>
+                        <li >
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Cardiologia
+                        </li>
+                        <li >
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Fisioterapia
+                        </li>
+                        <li >
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Psicologia
+                        </li>
+                        <li >
+                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Terapia
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h3 style="margin: 0;">Avaliação:</h3>
+
+                    <div class="d-flex flex-row">
+                        <div id="teste" class="ratings mr-2 my-rate" style="display: flex; flex-direction: row-reverse;">
+                            <i id="my-rate-5" (click)="setRating(5)" class="fa fa-star text-white" role="button"></i>
+                            <i id="my-rate-4" (click)="setRating(4)" class="fa fa-star text-white" role="button"></i>
+                            <i id="my-rate-3" (click)="setRating(3)" class="fa fa-star text-white" role="button"></i>
+                            <i id="my-rate-2" (click)="setRating(2)" class="fa fa-star text-white" role="button"></i>
+                            <i id="my-rate-1" (click)="setRating(1)" class="fa fa-star text-white" role="button"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</nav>
+
 <form (ngSubmit)="getDoctorsByName()">
     <div class="mb-3">
       <!-- <label for="exampleInputEmail1" class="form-label">Pesquise por nome</label> -->
@@ -8,6 +63,7 @@
         type="text" 
         class="form-control" 
         style="text-transform: capitalize;"
+        autocomplete="off"
         >
       <div id="emailHelp" class="form-text">Os filtros se aplicados refinarão a busca.</div>
       <button type="button" (click)="getDoctorsByName()" class="btn btn-primary" style="margin: auto;">Pesquisar</button>
@@ -39,11 +95,7 @@
             </div>
             <div class="d-flex flex-row">
                 <div class="ratings mr-2">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
+                    <i *ngFor="let star of getStars(doctor.stars)" class="fa fa-star"></i>
                 </div>
             </div>
 
