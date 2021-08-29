@@ -72,6 +72,23 @@ export class DoctorsListComponent implements OnInit {
   getStars(number) {
     return new Array(number);
   }
+
+  orderDoctors(arr){
+    console.log(arr)
+    function comparar(a, b) {
+      if (a.stars < b.stars) {
+        return 1;
+      }
+      if (a.stars > b.stars) {
+        return -1;
+      }
+      // a deve ser igual a b
+      return 0;
+    }
+
+    return arr.sort(comparar);
+  }
+
   ngOnInit(): void {
     this.doctorService.getCategorias().subscribe(data => {
       this.doctors = data;

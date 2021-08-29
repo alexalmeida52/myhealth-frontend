@@ -3,7 +3,7 @@
         <section class="wrapper">
             <div class="col-12 d-flex justify-content-between align-items-center">
             <h2 style="margin: 0;">
-                Pesquise por nome
+                Refine sua pesquisa
             </h2>
             <button type="button" class="burger" id="burger2">
                 <fa-icon style="color: #FFF;" [icon]="faFilter" ></fa-icon>
@@ -59,7 +59,7 @@
       <input 
         [(ngModel)]="name"
         name="name" 
-        placeholder="Digite sua pesquisa..." 
+        placeholder="Pesquise por nome" 
         type="text" 
         class="form-control" 
         style="text-transform: capitalize;"
@@ -70,7 +70,7 @@
     </div>
 </form>
 
-<div style="width: 100%; margin: auto;" class="row p-2 bg-white border rounded" *ngFor="let doctor of doctors">
+<div style="width: 100%; margin: auto;" class="row p-2 bg-white border rounded" *ngFor="let doctor of orderDoctors(doctors)">
                 
     <div class="mt-1 position-relative d-flex dividir col-md-9 col-sm-12">
 
