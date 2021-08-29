@@ -3,6 +3,13 @@ import { DoctorService } from 'src/app/shared/services/doctor.service';
 import $ from 'jquery';
 import { faStar, faFilter } from '@fortawesome/free-solid-svg-icons';
 
+interface Especialidades {
+  Nutrologia: Boolean,
+  Cardiologia: Boolean,
+  Fisioterapia: Boolean,
+  Ginecologia: Boolean,
+  Terapia: Boolean
+}
 
 @Component({
   selector: 'app-doctors-list',
@@ -15,6 +22,7 @@ export class DoctorsListComponent implements OnInit {
   doctors = [];
   name = "";
   stars = 0;
+  especialidades: Especialidades;
 
   constructor(private doctorService: DoctorService) { }
 
@@ -25,7 +33,8 @@ export class DoctorsListComponent implements OnInit {
   getDoctorsByName() {
     let filters = {
       name: this.name,
-      stars: this.stars
+      stars: this.stars,
+      speciality: this.especialidades
     }
     this.doctorService.getDoctorByName(filters).subscribe(data => {
       this.doctors = data;
@@ -40,13 +49,13 @@ export class DoctorsListComponent implements OnInit {
   }
 
   setStyleStars(number) {
-    if(document.getElementById('my-rate-' + number).classList.contains('my-rate-item-selected')){
-      if(document.getElementById('my-rate-' + (number + 1)).classList.contains('my-rate-item-selected')){
-        for(let i = (number+1); i <= 5; i++)
-        document.getElementById('my-rate-' + i).classList.remove('my-rate-item-selected');
+    if (document.getElementById('my-rate-' + number).classList.contains('my-rate-item-selected')) {
+      if (((number + 1 ) < 5) && document.getElementById('my-rate-' + (number + 1)).classList.contains('my-rate-item-selected')) {
+        for (let i = (number + 1); i <= 5; i++)
+          document.getElementById('my-rate-' + i).classList.remove('my-rate-item-selected');
         return;
       }
-      for(let i = 1; i <= 5; i++)
+      for (let i = 1; i <= 5; i++)
         document.getElementById('my-rate-' + i).classList.remove('my-rate-item-selected');
       return;
     }
@@ -67,6 +76,14 @@ export class DoctorsListComponent implements OnInit {
     this.doctorService.getCategorias().subscribe(data => {
       this.doctors = data;
     });
+
+    this.especialidades = {
+      Nutrologia: false,
+      Cardiologia: false,
+      Fisioterapia: false,
+      Ginecologia: false,
+      Terapia: false
+    };
   }
 
 }

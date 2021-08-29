@@ -26,6 +26,17 @@ export class DoctorService {
     console.log(filters);
     return this.httpClient.get<ResponseGetDoctors[]>(this.baseUrl + '/doctors/' + 
     '?name=' + filters.name +
-    '&stars=' + filters.stars);
+    '&stars=' + filters.stars +
+    '&speciality=' + this.getSpecialities(filters.speciality));
+  }
+
+  private getSpecialities(obj) {
+    let arr = [];
+    for(let elm in obj){
+      if(obj[elm]){
+        arr.push(elm);
+      }
+    }
+    return arr;
   }
 }

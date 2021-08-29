@@ -14,23 +14,23 @@
                     <h3 style="margin: 0;">Especialidades:</h3>
                     <ul class="menu-inner">
                         <li >
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Alergologia
+                            <input [(ngModel)]="especialidades.Nutrologia" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Nutrologia
                         </li>
                         <li >
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            <input [(ngModel)]="especialidades.Cardiologia" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
                             Cardiologia
                         </li>
                         <li >
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            <input [(ngModel)]="especialidades.Fisioterapia" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
                             Fisioterapia
                         </li>
                         <li >
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                            Psicologia
+                            <input [(ngModel)]="especialidades.Ginecologia" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            Ginecologia
                         </li>
                         <li >
-                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                            <input [(ngModel)]="especialidades.Terapia" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
                             Terapia
                         </li>
                     </ul>
@@ -104,7 +104,7 @@
             <h5>
                 {{ doctor.gender == 'M' ? 'Dr. ' : 'Dra. ' }} {{ doctor.name }} {{ doctor.last_name }}
             </h5>
-            <span>Cardiologia</span>
+            <span>{{ doctor.speciality }}</span>
             <div class="mt-1 mb-1 spec-1"><span>{{doctor.clinic}}, Alecrim, Natal-RN</span></div>
             
             <!-- <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p> -->                        
