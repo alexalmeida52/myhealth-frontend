@@ -23,6 +23,7 @@ export class DoctorsListComponent implements OnInit {
   name = "";
   stars = 0;
   especialidades: Especialidades;
+  maxPrice: 0;
 
   constructor(private doctorService: DoctorService) { }
 
@@ -34,7 +35,8 @@ export class DoctorsListComponent implements OnInit {
     let filters = {
       name: this.name,
       stars: this.stars,
-      speciality: this.especialidades
+      speciality: this.especialidades,
+      maxPrice: this.maxPrice
     }
     this.doctorService.getDoctorByName(filters).subscribe(data => {
       this.doctors = data;
@@ -100,6 +102,8 @@ export class DoctorsListComponent implements OnInit {
       Ginecologia: false,
       Terapia: false
     };
+
+    this.maxPrice = 0;
   }
 
 }

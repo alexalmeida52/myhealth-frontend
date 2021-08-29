@@ -48,6 +48,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4 col-sm-12">
+                    <label for="customRange1" class="form-label">Preço Máximo</label>
+                    <input [(ngModel)]="maxPrice" type="range" class="form-range" id="customRange1"
+                        min="0" max="1000"
+                    >
+                    R${{ maxPrice }},00
+                </div>
             </div>
         </section>
     </div>
