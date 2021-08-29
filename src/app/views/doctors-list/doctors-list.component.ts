@@ -74,7 +74,6 @@ export class DoctorsListComponent implements OnInit {
   }
 
   orderDoctors(arr){
-    console.log(arr)
     function comparar(a, b) {
       if (a.stars < b.stars) {
         return 1;
