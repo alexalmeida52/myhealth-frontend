@@ -52,7 +52,7 @@ export class DoctorsListComponent implements OnInit {
 
   setStyleStars(number) {
     if (document.getElementById('my-rate-' + number).classList.contains('my-rate-item-selected')) {
-      if (((number + 1 ) < 5) && document.getElementById('my-rate-' + (number + 1)).classList.contains('my-rate-item-selected')) {
+      if (((number + 1 ) <= 5) && document.getElementById('my-rate-' + (number + 1)).classList.contains('my-rate-item-selected')) {
         for (let i = (number + 1); i <= 5; i++)
           document.getElementById('my-rate-' + i).classList.remove('my-rate-item-selected');
         return;
