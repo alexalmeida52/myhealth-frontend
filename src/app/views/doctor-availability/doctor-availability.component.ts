@@ -15,8 +15,8 @@ import { Observable } from 'rxjs';
 export class DoctorAvailabilityComponent implements OnInit {
 
   selected: String | null;
-  schedules = ["2021-08-15 08:00","2021-08-15 08:30","2021-08-17 09:00","2021-08-15 09:30","2021-08-15 10:00","2021-08-15 10:30","2021-08-18 11:00","2021-10-15 11:30"];
-  //schedules = []; // Comentar a linha acima e descomentar essa.
+  //schedules = ["2021-08-15 08:00","2021-08-15 08:30","2021-08-17 09:00","2021-08-15 09:30","2021-08-15 10:00","2021-08-15 10:30","2021-08-18 11:00","2021-10-15 11:30"];
+  schedules = []; // Comentar a linha acima e descomentar essa.
   hours = [];
   doctor;
   stars = 0;
@@ -72,12 +72,12 @@ export class DoctorAvailabilityComponent implements OnInit {
 
     
     // Descomentar a função abaixo para puxar os dados do banco. 
-    /*
+    
     this.doctorAvailabilityService.getSchedules(id).subscribe(data => {
       this.schedules = data;
       console.log(data);
     })
-    */
+  
 
   }
 
