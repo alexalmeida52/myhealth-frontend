@@ -1,0 +1,7 @@
+.demo-inline-calendar-card {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

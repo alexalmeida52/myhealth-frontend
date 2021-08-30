@@ -12,9 +12,10 @@ import { FooterComponent } from './views/footer/footer.component';
 import { SchedulingComponent } from './views/scheduling/scheduling.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatDatepickerModule} from '@angular/material/datepicker'
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { DoctorAvailabilityComponent } from './views/doctor-availability/doctor-availability.component';
 
 @NgModule({
   exports: [
@@ -27,7 +28,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     DoctorsListComponent,
     HeaderComponent,
     FooterComponent,
-    SchedulingComponent
+    SchedulingComponent,
+    DoctorAvailabilityComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,9 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

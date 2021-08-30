@@ -93,6 +93,7 @@ export class DoctorsListComponent implements OnInit {
   ngOnInit(): void {
     this.doctorService.getCategorias().subscribe(data => {
       this.doctors = data;
+      console.log(this.doctors);
     });
 
     this.especialidades = {
