@@ -4,8 +4,10 @@
             <mat-calendar [dateFilter]="myFilter" (selectedChange)="addHours($event)"></mat-calendar>
         </mat-card>
     </div>
-    <div class="col">
-        <div class="mt-1 mb-1 spec-1 action-item-doctor">
+    <div class="col m-4">
+        <div class="mt-1 mb-1 action-item-doctor">
+            <h3>SELECIONE DATA E HORÁRIO</h3>
+            <h4>{{selected}}</h4>
             <button *ngFor="let e of hours" type="button" class="m-1 btn btn-primary">{{e}}</button>
         </div>
     </div>
