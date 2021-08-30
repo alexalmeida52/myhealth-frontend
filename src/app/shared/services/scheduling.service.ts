@@ -21,4 +21,8 @@ export class SchedulingService {
   public getSchedulings(): Observable<ResponseGetSchedulings[]> {
     return this.httpClient.get<ResponseGetSchedulings[]>(this.baseUrl + '/schedulings');
   }
+
+  public createScheduling(data) {
+    return this.httpClient.post(this.baseUrl + '/schedulings', data);
+  }
 }

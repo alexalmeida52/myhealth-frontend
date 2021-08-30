@@ -27,6 +27,20 @@ export class SchedulingComponent implements OnInit {
     });
   }
 
+  createScheduling(data) {
+    // simulando dados
+    data = {
+      start_date: "2021-10-10 08:00",
+      patient_id: "612c033506ca88075f225bb6",
+      doctor_id: "611c2ba240ba37049e2d332c",
+      timetable_id: "612c27ec73b6c3082569bb1a"
+    }
+
+    this.schedulingService.createScheduling(data).subscribe(data => {
+      console.log(data);
+    });
+  }
+  
   ngOnInit(): void {
     this.getSchedulings();
   }
