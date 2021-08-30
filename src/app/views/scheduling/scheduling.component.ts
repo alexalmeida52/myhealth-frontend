@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SchedulingService } from 'src/app/shared/services/scheduling.service';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-scheduling',
@@ -39,6 +41,10 @@ export class SchedulingComponent implements OnInit {
     this.schedulingService.createScheduling(data).subscribe(data => {
       console.log(data);
     });
+  }
+
+  formateDate(str) {
+    return moment(str).format("DD/MM/YYYY HH:mm")
   }
   
   ngOnInit(): void {
