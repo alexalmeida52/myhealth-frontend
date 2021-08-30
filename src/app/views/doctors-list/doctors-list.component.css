@@ -221,3 +221,9 @@ h5 {
     color: orange!important;
     cursor: pointer!important;
 }
+
+
+.align-items-center h2 {
+    color: #41BC59;
+    text-shadow: 1px 1px 2px black;
+}

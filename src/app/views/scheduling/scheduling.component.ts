@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SchedulingService } from 'src/app/shared/services/scheduling.service';
 
 @Component({
   selector: 'app-scheduling',
@@ -8,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
 export class SchedulingComponent implements OnInit {
 
   selected: Date | null;
+  schedulings = [];
+  constructor(private schedulingService: SchedulingService) { }
 
-  constructor() { }
+  getStars(number) {
+    return new Array(number);
+  }
+
+  formatPrice(value): String {
+    return value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+  }
+
+  getSchedulings() {
+    this.schedulingService.getSchedulings().subscribe(data => {
+      console.log(data);
+      this.schedulings = data;
+    });
+  }
 
   ngOnInit(): void {
+    this.getSchedulings();
   }
 
 }

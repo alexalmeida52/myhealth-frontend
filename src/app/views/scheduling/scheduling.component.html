@@ -1,4 +1,64 @@
-<mat-card class="demo-inline-calendar-card">
-    <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
-</mat-card>
-<p>Selected date: {{selected}}</p>
+<h2>Agendamentos</h2>             
+<div style="width: 100%; margin: auto;" class="row p-2 bg-white border rounded" *ngFor="let scheduling of schedulings">
+    <div class="mt-1 position-relative d-flex dividir col-md-9 col-sm-12">
+
+        <div style="    display: flex!important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;">
+            <div
+            style="    display: flex!important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%!important;
+            overflow: hidden;
+            height: 120px; width: 120px;
+            min-width: 120px;
+            min-height: 120px;"
+            class="col-md-2 col-sm-4 mt-1 d-flex justify-content-center align-items-top rounded">
+                <div class="d-flex" style="height: 100%; width: 100%;">
+                    <img style="max-width: 100%; max-height: 100%;" class="img-fluid img-responsive rounded product-image" [src]="scheduling.doctor_id.avatar">
+                </div>
+            </div>
+            <div class="d-flex flex-row">
+                <div class="ratings mr-2">
+                    <i *ngFor="let star of getStars(scheduling.doctor_id.stars)" class="fa fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-10 col-sm-8 p-2">
+            <h5>
+                {{ scheduling.doctor_id.gender == 'M' ? 'Dr. ' : 'Dra. ' }} {{ scheduling.doctor_id.name }} {{ scheduling.doctor_id.last_name }}
+            </h5>
+            <span>{{ scheduling.doctor_id.speciality }}</span>
+            <div class="mt-1 mb-1 spec-1"><span>{{scheduling.doctor_id.clinic}}, Alecrim, Natal-RN</span></div>
+            
+            <!-- <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p> -->                        
+        </div>
+    </div>
+    <div class="d-flex flex-column align-items-center align-content-center col-md-3 col-sm-12 border-left mt-1 d-md-block d-sm-flex">
+        <div class="align-items-center">
+            <h3 class="mr-1">
+                <strong>
+                    {{ "10/10/2020 20:20" }}
+                </strong>
+            </h3>
+            <!-- <span class="strike-text">$200.99</span> -->
+        </div>
+        <div class="align-items-center">
+            <h2 class="mr-1">
+                <strong>
+                    {{ formatPrice(scheduling.doctor_id.price) }}
+                </strong>
+            </h2>
+            <!-- <span class="strike-text">$200.99</span> -->
+        </div>
+        <div class="mt-1 mb-1 spec-1 action-item-doctor">
+            <button type="button" class="btn btn-primary" style="margin-right: 8px">Perfil</button>
+            <button type="button" class="btn btn-danger">Cancelar</button>
+        </div>
+        
+    </div>
+</div>
