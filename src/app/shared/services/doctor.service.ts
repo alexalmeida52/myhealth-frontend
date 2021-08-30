@@ -31,6 +31,14 @@ export class DoctorService {
     '&speciality=' + this.getSpecialities(filters.speciality));
   }
 
+  public getDoctorById(id) : Observable<any> {
+    console.log("idd:" + id);
+   
+
+    return this.httpClient.get<any>(this.baseUrl + '/doctors/' + id);
+
+  }
+
   private getSpecialities(obj) {
     let arr = [];
     for(let elm in obj){
